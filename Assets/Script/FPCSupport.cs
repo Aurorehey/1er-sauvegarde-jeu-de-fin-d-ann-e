@@ -9,7 +9,7 @@ public class FPCSupport: MonoBehaviour
     private UnityStandardAssets.Characters.FirstPerson.FirstPersonController fpsComp;//pour controler les mouvements du joueur.
 
     public float pickupRange = 3.0f;
-    private GameObject objectInteract;
+    private GameObject objectInteract; //stockage des imforamtions de item
 
     [Header("Button List")] //titre pour les boutons.
     public string InventoryButton;
@@ -22,7 +22,7 @@ public class FPCSupport: MonoBehaviour
     [HideInInspector] public bool inventoryOn = false;//variable caché dans l'inspecteur.pas utile priver. il peut etre remplace par private. cette variable permet de savoir si l'inventaire est activé ou non grace à une fonction.
     public Transform itemPrefab;
     public Transform inventorySlots;
-    public int slotCount = 16;
+    public int slotCount = 16;//si on verifie pas le nombre de casse cela continura à l'infini. 
     // Start is called before the first frame update
     void Start()
     {
@@ -83,7 +83,16 @@ public class FPCSupport: MonoBehaviour
                     Transform newItem;
                     newItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity) as Transform;//si on laisse comme ça le new item va apparaitre à une possition aléatoire.
                     newItem.SetParent(inventorySlots,false);//si on lui donne un parent est ce que l'objet va garder ça possition oui = true le parent va réévaluaer la position pour etre ajuster au parent.
+
+                    // transferrer les données  de l'item de l'inventaire
+                    ItemSlots itemInventory = newItem.GetComponent<ItemSlots>();
+                    ItemVariables itemScene = objectInteract.GetComponent<ItemVariables>();
+                    itemInventory.itemType = itemScene.itemType;
+                    itemInventory.itemID = itemScene.itemID;
+                    itemInventory.itemSprite = itemScene.itemSprite;
+                    itemInventory.itemDescription = itemScene.itemDescription;
                 }
+
                
             }
         }
