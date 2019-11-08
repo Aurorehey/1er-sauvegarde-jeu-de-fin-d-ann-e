@@ -831,7 +831,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.5352542e-20, y: 0, z: 0, w: 4e-45}
+  m_BoundingSphereOverride: {x: 3.383e-42, y: 1.02e-43, z: 1e-45, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1416,7 +1416,7 @@ MonoBehaviour:
   playerCam: {fileID: 0}
   pickupRange: 3
   InventoryButton: Inventory
-  interactButton: 
+  InteractButton: Interact
   ItemTag: Item
   inventoryCanvas: {fileID: 0}
   inventoryOn: 0

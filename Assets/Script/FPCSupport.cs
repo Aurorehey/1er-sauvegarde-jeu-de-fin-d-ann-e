@@ -54,6 +54,7 @@ public class FPCSupport: MonoBehaviour
         if (Input.GetButtonDown(InteractButton))
         {
             TryToInteract();//lance la fonction TryToInteract.
+            
         }
     }
 
@@ -67,7 +68,7 @@ public class FPCSupport: MonoBehaviour
             objectInteract = hit.collider.gameObject;
             if(objectInteract.tag == ItemTag)
             {
-                //pick up 
+                //pick up ramacer
                 //verifier si l'inventaire est complet
                 if (inventorySlots.childCount == slotCount)
                 {
