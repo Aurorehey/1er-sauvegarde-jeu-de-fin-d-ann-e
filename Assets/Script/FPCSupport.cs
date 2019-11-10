@@ -88,11 +88,7 @@ public class FPCSupport: MonoBehaviour
                     // transferrer les données  de l'item de l'inventaire
                     ItemSlots itemInventory = newItem.GetComponent<ItemSlots>();
                     ItemVariables itemScene = objectInteract.GetComponent<ItemVariables>();
-                    /* itemInventory.itemType = itemScene.itemType;
-                     itemInventory.itemID = itemScene.itemID;
-                     itemInventory.itemSprite = itemScene.itemSprite;
-                     itemInventory.itemDescription = itemScene.itemDescription;*/
-                     itemInventory.itemType=itemScene.itemType;
+                    itemInventory.itemType=itemScene.itemType;
                     itemInventory.itemID=itemScene.itemID;
                     itemInventory. itemSprite=itemScene.itemSprite;
                     itemInventory. itemDescription=itemScene.itemDescription;
