@@ -83,7 +83,15 @@ public class FPCSupport : MonoBehaviour
                     Transform newItem;
                     newItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity) as Transform;//si on laisse comme ça le new item va apparaitre à une possition aléatoire.
                     newItem.SetParent(inventorySlots, false);//si on lui donne un parent est ce que l'objet va garder ça possition oui = true le parent va réévaluaer la position pour etre ajuster au parent.
-                }
+
+                    //telecharger les informations de slot à l'inventaire.
+                    ItemSlots itemInventory = newItem.GetComponent<ItemSlots>();
+                    ItemVariables itemScene = objectInteract.GetComponent<ItemVariables>();
+                    itemInventory.itemType=itemScene.itemType;
+                    itemInventory.itemID=itemScene.itemID;
+                    itemInventory.itemSprite= itemScene.itemSprite;
+                    itemInventory.itemDescription=itemScene.itemDescription;
+}
 
             }
         }
