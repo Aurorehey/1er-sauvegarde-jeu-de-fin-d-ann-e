@@ -33,5 +33,10 @@ public class ItemSlots : MonoBehaviour
     {
         textDisplay.SetActive(false);
     }
+    public void TakeItem()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        player.GetComponent<FPCSupport>().YouAreoldingItem(this.gameObject, itemType,itemID);
+    }
 
 }

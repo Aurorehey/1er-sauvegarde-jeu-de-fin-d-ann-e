@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Aramacer
   - Item
+  - DoAction
   layers:
   - Default
   - TransparentFX
