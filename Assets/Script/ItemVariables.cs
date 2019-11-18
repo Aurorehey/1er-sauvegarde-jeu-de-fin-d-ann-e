@@ -8,4 +8,5 @@ public class ItemVariables: MonoBehaviour
     public string itemID;
     public Sprite itemSprite;
     public string itemDescription;
+    public bool itemReutilisable = false;
 }

@@ -7,7 +7,10 @@ public class FPCSupport : MonoBehaviour
 {
     public GameObject playerCam;
     private UnityStandardAssets.ImageEffects.Blur blur;//pour rendre la page flou
-    private UnityStandardAssets.Characters.FirstPerson.FirstPersonController fpsComp;//pour controler les mouvements du joueur.
+    private UnityStandardAssets.Characters.FirstPerson.FirstPersonController fpsComp;//pour controler les mouvements du joueur.Le rendre fixe.
+
+    public Text infoDisplay;//acceder au composant d'info
+    private bool infoCoroutineIsRunning = false;
 
     public float pickupRange = 3.0f;
     private GameObject objectInteract;
@@ -18,6 +21,16 @@ public class FPCSupport : MonoBehaviour
     [Header("Tag List")]
     public string ItemTag = "item";
     public string doActionTag = "DoAction";
+
+    [Header("Crosshair's data")]
+    public string layerInteract = "Interact";
+    public GameObject crosshairDisplay;
+    public int defaultSize = 30;
+    public int specialSize = 50;
+    public Sprite defaulTexture;//texture par defaut.
+    public Sprite interactTexture;// texture d'interaction.
+    private bool useSpecialTexture = false ;
+
 
     [Header("inventory's Data")]
     public GameObject inventoryCanvas;//acceder à l'inventaire en lui meme.regroupe les elements de l'inventaire
@@ -30,6 +43,7 @@ public class FPCSupport : MonoBehaviour
     private GameObject itemObjectold;
     private string itemTypeold;
     private string itemIDold;
+    private bool itemReutilisableold;
 
     void Start()
     {
@@ -40,8 +54,19 @@ public class FPCSupport : MonoBehaviour
 
         blur = playerCam.GetComponent<UnityStandardAssets.ImageEffects.Blur>();//acceder au script blur
         blur.enabled = false;//blur bien désactivé au démarage.Juste un composant on utilise enabled.
+        if (infoDisplay== null)
+        {
+            infoDisplay = GameObject.Find("infoDisplay").GetComponent<Text>();//crosshairdisplay pas renseigner.
 
+        }
+        infoDisplay.text = "";
         fpsComp = GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();//acceder aux composants de fps.
+        if (crosshairDisplay == null)
+        {
+            crosshairDisplay = GameObject.Find("Crosshair");//crosshairdisplay pas renseigner.
+
+        }
+        crosshairDisplay.GetComponent<RectTransform>().sizeDelta = new Vector2(defaultSize, defaultSize);
 
         if (inventoryCanvas == null)
         {
@@ -53,16 +78,29 @@ public class FPCSupport : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetButtonDown(InventoryButton))
         {
             ShowOnHideInventory(); //fonction appeller à chaque fois qu'on appuis sur le bouton et qui va simplifier le travaille de recherche si l'inventaire est activé.
+            if (holdingItem)
+            {
+                StopoldingItem();
+            }
         }
         //controler si on appuye sur inventoryButton.
         if (Input.GetButtonDown(InteractButton)&& !inventoryOn)
         {
+            if (infoCoroutineIsRunning)
+            {
+                infoDisplay.text = "";
+                infoCoroutineIsRunning = false;
+            }
+        
+           
             if (holdingItem)
             {
                 TryToUse();
+
             }
             else
             {
@@ -71,7 +109,29 @@ public class FPCSupport : MonoBehaviour
             }
 
         }
+        if (!useSpecialTexture)
+        {
+            Ray ray = playerCam.GetComponent<Camera>().ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));//lancer un rayon devant le joueur de la distance pickupRnage si il y a pas un item devant lui.
+            RaycastHit hit;//hit point d'impact du rayon avec un colider
+
+            if (Physics.Raycast(ray, out hit, pickupRange))//est ce que le rayon touche un collider si oui on a le 1er if
+            {
+                if (hit.collider.gameObject.layer == LayerMask.NameToLayer(layerInteract)) //2 eme if va verifier si le collider qu'on a toucher appartient à un objet avec lequel on peut interagir = item,doaction,.....
+                {
+                    crosshairDisplay.GetComponent<Image>().sprite = interactTexture; //cela va aller changer la sorce d'image dans l'inspector.
+                }
+                else//si on ne peut interagir avec l'objet en question.(un mur par exemple).
+                {
+                    crosshairDisplay.GetComponent<Image>().sprite = defaulTexture;
+                }
+            }
+            else//si le rayon ne touche rien par rapport au collider.
+            {
+                crosshairDisplay.GetComponent<Image>().sprite = defaulTexture;
+            }
+        }
     }
+
 
     void TryToInteract()
     {
@@ -87,7 +147,9 @@ public class FPCSupport : MonoBehaviour
                 //verifier si l'inventaire est complet
                 if (inventorySlots.childCount == slotCount)
                 {
-                    Debug.Log("L'inventaire est complet!");
+                    //Debug.Log("L'inventaire est complet!");
+                    infoDisplay.text = "Inventaire est complet!";
+                    StartCoroutine(WaitAndEraseInfo());
                 }
 
                 //hoever
@@ -107,6 +169,7 @@ public class FPCSupport : MonoBehaviour
                     itemInventory.itemID=itemScene.itemID;
                     itemInventory.itemSprite= itemScene.itemSprite;
                     itemInventory.itemDescription=itemScene.itemDescription;
+                    itemInventory.itemReutilisable=itemScene.itemReutilisable;
                 }
 
             }
@@ -118,8 +181,11 @@ public class FPCSupport : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Vous ne pouvez pas faire ça sans item!");
+                    //Debug.Log("Vous ne pouvez pas faire ça sans item!");
+                    infoDisplay.text = objectInteract.GetComponent<DoAction>().textwithoutItem;
+                    StartCoroutine(WaitAndEraseInfo());
                 }
+            
             }  
         }
     }
@@ -139,24 +205,30 @@ public class FPCSupport : MonoBehaviour
                     if (itemIDold == objectInteract.GetComponent<DoAction>().itemID || objectInteract.GetComponent<DoAction>().itemID == null)
                     {
                         // bon item(right item)
-                        objectInteract.GetComponent<DoAction>().DoActionNow();
-                        Destroy(itemObjectold);
+                         objectInteract.GetComponent<DoAction>().DoActionNow();
+                        if (!itemReutilisableold)
+                        {
+                            Destroy(itemObjectold);
+                        }  
                     }
                     else
                     {
-                        Debug.Log("Ce n'est pas le bon identifiant de l'objet!");//pas verifier : pas bon identifiant de l'object
+                        //Debug.Log("Ce n'est pas le bon identifiant de l'objet!");//pas verifier : pas bon identifiant de l'object
+                        infoDisplay.text = objectInteract.GetComponent<DoAction>().textwithoutRightIDItem;
+                        StartCoroutine(WaitAndEraseInfo());
                     }
                 }
                 else
                 {
-                    Debug.Log("Ce n'est pas le bon type d'objet!");//si on n'as pas le bon item utiliser alors erreur. Creer un lien entre itemslots et fpcSupport(if wrong item error)
+                    //Debug.Log("Ce n'est pas le bon type d'objet!");//si on n'as pas le bon item utiliser alors erreur. Creer un lien entre itemslots et fpcSupport(if wrong item error)
+                    infoDisplay.text = "Vous ne pouvez pas utiliser cette objet ici!";
+                    StartCoroutine(WaitAndEraseInfo());
                 }
             }    
         }
-        //vous utilisé l'objet pour qu'il ne soit plus entre vos mains(l'objet reviens dans l'inventaire ou il est detruit).
-        holdingItem = false;
+        StopoldingItem();
     }
-    public void  YouAreoldingItem(GameObject itemObject,string itemType,string itemID)//type,ID,gameobject en lui mê qui est l'item.
+    public void  YouAreoldingItem(GameObject itemObject,string itemType,string itemID,Sprite itemSprite,bool itemReutilisable)//type,ID,gameobject en lui mê qui est l'item.
     {
         holdingItem = true;//pourquoi si l'item est utilisé il faudra le detruire
         //quitter automatiquement l'inventaire.
@@ -165,7 +237,20 @@ public class FPCSupport : MonoBehaviour
         itemObjectold = itemObject;
         itemTypeold = itemType;
         itemIDold = itemID;
+        itemReutilisableold = itemReutilisable;
+        //modification du curseur prendre la  forme de cle marteau ou briquet
+        useSpecialTexture = true;
+        crosshairDisplay.GetComponent<Image>().sprite = itemSprite;
+        crosshairDisplay.GetComponent<RectTransform>().sizeDelta = new Vector2(specialSize, specialSize);
+    }
 
+    void StopoldingItem()
+    {
+        //vous utilisé l'objet pour qu'il ne soit plus entre vos mains(l'objet reviens dans l'inventaire ou il est detruit).
+        holdingItem = false;
+        //et on reset le riticule.
+        useSpecialTexture = false;
+        crosshairDisplay.GetComponent<RectTransform>().sizeDelta = new Vector2(defaultSize, defaultSize);
     }
     void ShowOnHideInventory()
     {
@@ -179,10 +264,20 @@ public class FPCSupport : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
         else { Cursor.lockState = CursorLockMode.None; }
+        crosshairDisplay.SetActive(inventoryOn);
 
 
 
 
         inventoryOn = !inventoryOn; //avec le ! cela veut dire que si inventoryOn est = a false alors il deviendra true et inversement.
+
+
+    }
+    IEnumerator WaitAndEraseInfo()
+    {
+        //attendre une certain temps 
+        yield return new WaitForSeconds(5);
+        //apres avoir attendue 
+        infoDisplay.text = "";
     }
 }

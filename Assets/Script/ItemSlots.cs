@@ -14,6 +14,7 @@ public class ItemSlots : MonoBehaviour
     public string itemID;
     public Sprite itemSprite;
     public string itemDescription;
+    public bool itemReutilisable= false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,7 @@ public class ItemSlots : MonoBehaviour
     public void TakeItem()
     {
         GameObject player = GameObject.FindWithTag("Player");
-        player.GetComponent<FPCSupport>().YouAreoldingItem(this.gameObject, itemType,itemID);
+        player.GetComponent<FPCSupport>().YouAreoldingItem(this.gameObject, itemType,itemID,itemSprite,itemReutilisable);
     }
 
 }
