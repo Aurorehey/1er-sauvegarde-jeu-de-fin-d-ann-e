@@ -267,6 +267,7 @@ MonoBehaviour:
   itemID: 
   itemSprite: {fileID: 0}
   itemDescription: 
+  itemReutilisable: 0
 --- !u!114 &6769019834176886121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,8 +316,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 6769019834176886120}
-          m_MethodName: TakeItem
-          m_Mode: 1
+          m_MethodName: Click
+          m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

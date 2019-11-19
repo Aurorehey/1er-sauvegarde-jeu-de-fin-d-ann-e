@@ -44,6 +44,7 @@ public class FPCSupport : MonoBehaviour
     private string itemTypeold;
     private string itemIDold;
     private bool itemReutilisableold;
+    public GameObject InventoryItemOptions;
 
     void Start()
     {
@@ -73,6 +74,11 @@ public class FPCSupport : MonoBehaviour
             inventoryCanvas = GameObject.Find("Inventory Panel");
         }//inventory canvas bien renseigné.
         inventoryCanvas.SetActive(false);//quand c'est un game object on utilise setActive.
+        if(InventoryItemOptions == null)
+        {
+            InventoryItemOptions = GameObject.Find("Inventory_Items_Options");
+            InventoryItemOptions.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -254,10 +260,16 @@ public class FPCSupport : MonoBehaviour
     }
     void ShowOnHideInventory()
     {
+        //gere l'inventaire et le joueur.
         inventoryCanvas.SetActive(!inventoryOn);
         blur.enabled = !inventoryOn;
         fpsComp.enabled = inventoryOn; //fonctionne de façon désinchroniser car il est true au debut et il deveindra false après.
-
+        // gere les options de l'inventaire je veux que quands l'inventaire s'eteind les options de l'inventaire aussi et pas l'inverse.
+        if (inventoryOn)
+        {
+            InventoryItemOptions.SetActive(false);
+        }
+        //gere le curseur.
         Cursor.visible = !inventoryOn;
         if (inventoryOn)
         {
@@ -273,11 +285,35 @@ public class FPCSupport : MonoBehaviour
 
 
     }
+    public void ActiviteItemOptions(GameObject itemSelected)
+    {
+        InventoryItemOptions.SetActive(true);
+        itemObjectold = itemSelected;
+        //Acceder au(x) button(s)
+        Transform buttonOptions = InventoryItemOptions.transform.GetChild(0);
+        //placement des bouttons(options)
+        buttonOptions.position = Input.mousePosition;
+    }
+    public void DisableItemOptions()
+    {
+        InventoryItemOptions.SetActive(false);
+    }
+    public void DropItem()
+    {
+        Destroy(itemObjectold);
+        InventoryItemOptions.SetActive(false);
+    }
     IEnumerator WaitAndEraseInfo()
     {
+        infoCoroutineIsRunning = true;
         //attendre une certain temps 
         yield return new WaitForSeconds(5);
         //apres avoir attendue 
-        infoDisplay.text = "";
+        if (infoCoroutineIsRunning)
+        {
+            infoDisplay.text = "";
+            infoCoroutineIsRunning = false;
+        }
+        
     }
 }

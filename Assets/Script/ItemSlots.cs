@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
+    
 public class ItemSlots : MonoBehaviour
 {
     public Text textItem;
@@ -14,7 +16,7 @@ public class ItemSlots : MonoBehaviour
     public string itemID;
     public Sprite itemSprite;
     public string itemDescription;
-    public bool itemReutilisable= false;
+    public bool itemReutilisable = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,21 @@ public class ItemSlots : MonoBehaviour
     {
         textDisplay.SetActive(false);
     }
-    public void TakeItem()
+    public void Click(BaseEventData bed)
+    {
+        PointerEventData ped = (PointerEventData)bed;// ou = bed as PointerEventData. en gros on veut la meme chose que baseEventData mais du point de vue du pointer.
+        //Debug.Log("Button : " + ped.button);
+        if(ped.button == PointerEventData.InputButton.Left)
+        {
+            TakeItem();
+        }
+        else if(ped.button == PointerEventData.InputButton.Right)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            player.GetComponent<FPCSupport>().ActiviteItemOptions(this.gameObject);
+        }
+    }
+     void TakeItem()//peut enlever le publique car plus appeler par eventtrigger
     {
         GameObject player = GameObject.FindWithTag("Player");
         player.GetComponent<FPCSupport>().YouAreoldingItem(this.gameObject, itemType,itemID,itemSprite,itemReutilisable);
