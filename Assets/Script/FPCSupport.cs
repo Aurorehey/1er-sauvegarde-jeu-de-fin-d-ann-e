@@ -77,8 +77,8 @@ public class FPCSupport : MonoBehaviour
         if(InventoryItemOptions == null)
         {
             InventoryItemOptions = GameObject.Find("Inventory_Items_Options");
-            InventoryItemOptions.SetActive(false);
         }
+            InventoryItemOptions.SetActive(false);
     }
 
     // Update is called once per frame
