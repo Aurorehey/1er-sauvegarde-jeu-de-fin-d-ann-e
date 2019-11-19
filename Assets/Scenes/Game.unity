@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af35bad2ba51eb5439b9ba1668a9e7bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needItem: 0
+  needItem: 1
   itemType: Briquet
   itemID: 
   textwithoutItem: "Cette Porte est ferm\xE9 \xE0 Cl\xE9."
@@ -1175,7 +1175,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3.15e-42, y: 1.05e-43, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 4e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2494,7 +2494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af35bad2ba51eb5439b9ba1668a9e7bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needItem: 0
+  needItem: 1
   itemType: aaa
   itemID: 
   textwithoutItem: C'est une porte!
@@ -3463,6 +3463,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSController
       objectReference: {fileID: 0}
+    - target: {fileID: 8365020006081371211, guid: 465c2100eec22db4bad75d370e770e61,
+        type: 3}
+      propertyPath: inventorySlots
+      value: 
+      objectReference: {fileID: 1598081032}
+    - target: {fileID: 8365020006081371211, guid: 465c2100eec22db4bad75d370e770e61,
+        type: 3}
+      propertyPath: crosshairDisplay
+      value: 
+      objectReference: {fileID: 1246267125}
+    - target: {fileID: 8365020006081371211, guid: 465c2100eec22db4bad75d370e770e61,
+        type: 3}
+      propertyPath: slotCount
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8365020005622533445, guid: 465c2100eec22db4bad75d370e770e61,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3517,21 +3532,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8365020006081371211, guid: 465c2100eec22db4bad75d370e770e61,
-        type: 3}
-      propertyPath: inventorySlots
-      value: 
-      objectReference: {fileID: 1598081032}
-    - target: {fileID: 8365020006081371211, guid: 465c2100eec22db4bad75d370e770e61,
-        type: 3}
-      propertyPath: crosshairDisplay
-      value: 
-      objectReference: {fileID: 1246267125}
-    - target: {fileID: 8365020006081371211, guid: 465c2100eec22db4bad75d370e770e61,
-        type: 3}
-      propertyPath: slotCount
-      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 465c2100eec22db4bad75d370e770e61, type: 3}
