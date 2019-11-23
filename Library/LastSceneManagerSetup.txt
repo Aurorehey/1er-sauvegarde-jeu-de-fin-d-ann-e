@@ -1,5 +1,5 @@
 sceneSetups:
-- path: C:/Users/a.pauwels/Desktop/Dialogue-System-master/Dialogue System/Assets/Main.unity
+- path: Assets/Scenes/Game.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
