@@ -447,7 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: aaa
-  itemID: 002
+  itemID: 001
   itemSprite: {fileID: 21300000, guid: ba5c269605af31c48bd68cfaeee6fc36, type: 3}
   itemDescription: Cle argente
   itemReutilisable: 0
@@ -990,7 +990,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 2.351e-42, y: 6e-44, z: -1.4848525e+36, w: 0}
+  m_BoundingSphereOverride: {x: 2.707e-42, y: 1.02e-43, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1392,7 +1392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: Briquet
-  itemID: 003
+  itemID: 002
   itemSprite: {fileID: 21300000, guid: 20419fe89f8c1ea4c9b259a6a02a4888, type: 3}
   itemDescription: briquet
   itemReutilisable: 1
@@ -3122,6 +3122,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1760261521206089264, guid: dc6dbe3ea391dbb4f8f7722a1dace406,
+        type: 3}
+      propertyPath: itemID
+      value: 001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc6dbe3ea391dbb4f8f7722a1dace406, type: 3}
 --- !u!23 &2370686815908117910
@@ -3298,6 +3303,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483407879822142602, guid: 7a391884d34a72d49887b65eaf138a72,
+        type: 3}
+      propertyPath: itemID
+      value: 002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a391884d34a72d49887b65eaf138a72, type: 3}
