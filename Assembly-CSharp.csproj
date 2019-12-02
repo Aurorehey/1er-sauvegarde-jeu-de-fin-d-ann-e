@@ -74,6 +74,7 @@
     <Compile Include="Assets\Script\Dialogues.cs" />
     <Compile Include="Assets\Script\DialoguesTrigger.cs" />
     <Compile Include="Assets\Script\DoAction.cs" />
+    <Compile Include="Assets\Script\EnnemyMove.cs" />
     <Compile Include="Assets\Script\FPCSupport.cs" />
     <Compile Include="Assets\Script\ItemSlots.cs" />
     <Compile Include="Assets\Script\ItemVariables.cs" />
