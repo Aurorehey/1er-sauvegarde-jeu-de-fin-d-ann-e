@@ -15,6 +15,8 @@ public class FPCSupport : MonoBehaviour
     public float pickupRange = 3.0f;
     private GameObject objectInteract;
 
+
+
     [Header("Button List")] //titre pour les boutons.
     public string InventoryButton;
     public string InteractButton;
@@ -46,8 +48,11 @@ public class FPCSupport : MonoBehaviour
     private bool itemReutilisableold;
     public GameObject InventoryItemOptions;
 
+   
+
     void Start()
     {
+        
         if (playerCam == null)
         {
             playerCam = GameObject.FindWithTag("MainCamera");
@@ -137,7 +142,6 @@ public class FPCSupport : MonoBehaviour
             }
         }
     }
-
 
     void TryToInteract()
     {
@@ -316,4 +320,5 @@ public class FPCSupport : MonoBehaviour
         }
         
     }
+   
 }

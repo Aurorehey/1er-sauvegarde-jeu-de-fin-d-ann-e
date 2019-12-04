@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class DialogueManager : MonoBehaviour
 {
+
     public Text nameText;
-    public Text dialoguesText;
+    public Text dialogueText;
 
     public Animator animator;
 
     private Queue<string> sentences;
-    
-    
 
-    // Start is called before the first frame update
+    // Use this for initialization
     void Start()
     {
         sentences = new Queue<string>();
-
     }
-    public void StartDialogues (Dialogues dialogue)
+
+    public void StartDialogue(Dialogue dialogue)
     {
         animator.SetBool("IsOpen", true);
 
@@ -35,28 +35,35 @@ public class DialogueManager : MonoBehaviour
 
         DisplayNextSentence();
     }
+
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0)
+        if (sentences.Count == 0)
         {
-            EndDialogues();
+            EndDialogue();
             return;
         }
+
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
+
     IEnumerator TypeSentence(string sentence)
     {
-        dialoguesText.text = "";
+        dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
-            dialoguesText.text += letter;
+            dialogueText.text += letter;
             yield return null;
         }
     }
-    void EndDialogues()
+
+    void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
     }
+
 }
+
+
