@@ -1,5 +1,6 @@
 sceneSetups:
-- path: Assets/Scenes/Game.unity
+- path: C:/Users/a.pauwels/OneDrive - Interface3/SoundDesignLab/Assets/Sci-Fi Styled
+    Modular Pack/Scenes/Snow.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

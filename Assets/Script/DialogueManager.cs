@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
 
     private Queue<string> sentences;
+    private Dialogue dialogue;
 
     // Use this for initialization
     void Start()
@@ -36,11 +38,12 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
+
     public void DisplayNextSentence()
     {
         if (sentences.Count == 0)
         {
-            EndDialogue();
+            EndDialogue(dialogue);
             return;
         }
 
@@ -59,7 +62,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void EndDialogue()
+     public void EndDialogue(Dialogue dialogue)
     {
         animator.SetBool("IsOpen", false);
     }
