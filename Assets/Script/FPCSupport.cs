@@ -14,7 +14,7 @@ public class FPCSupport : MonoBehaviour
 
     public float pickupRange = 3.0f;
     private GameObject objectInteract;
-
+    
 
 
     [Header("Button List")] //titre pour les boutons.
@@ -47,8 +47,7 @@ public class FPCSupport : MonoBehaviour
     private string itemIDold;
     private bool itemReutilisableold;
     public GameObject InventoryItemOptions;
-
-   
+    private Dialogue dialogue;
 
     void Start()
     {
@@ -99,8 +98,10 @@ public class FPCSupport : MonoBehaviour
             }
         }
         //controler si on appuye sur inventoryButton.
+        
         if (Input.GetButtonDown(InteractButton)&& !inventoryOn)
         {
+         
             if (infoCoroutineIsRunning)
             {
                 infoDisplay.text = "";
@@ -118,6 +119,7 @@ public class FPCSupport : MonoBehaviour
                 TryToInteract();//lance la fonction TryToInteract.
                 
             }
+            
 
         }
         if (!useSpecialTexture)
@@ -262,16 +264,18 @@ public class FPCSupport : MonoBehaviour
         useSpecialTexture = false;
         crosshairDisplay.GetComponent<RectTransform>().sizeDelta = new Vector2(defaultSize, defaultSize);
     }
-    void ShowOnHideInventory()
+    public void ShowOnHideInventory()
     {
         //gere l'inventaire et le joueur.
         inventoryCanvas.SetActive(!inventoryOn);
         blur.enabled = !inventoryOn;
         fpsComp.enabled = inventoryOn; //fonctionne de façon désinchroniser car il est true au debut et il deveindra false après.
         // gere les options de l'inventaire je veux que quands l'inventaire s'eteind les options de l'inventaire aussi et pas l'inverse.
+        
         if (inventoryOn)
         {
             InventoryItemOptions.SetActive(false);
+            
         }
         //gere le curseur.
         Cursor.visible = !inventoryOn;
@@ -282,13 +286,14 @@ public class FPCSupport : MonoBehaviour
         else { Cursor.lockState = CursorLockMode.None; }
         crosshairDisplay.SetActive(inventoryOn);
 
-
+       
 
 
         inventoryOn = !inventoryOn; //avec le ! cela veut dire que si inventoryOn est = a false alors il deviendra true et inversement.
 
 
     }
+   
     public void ActiviteItemOptions(GameObject itemSelected)
     {
         InventoryItemOptions.SetActive(true);

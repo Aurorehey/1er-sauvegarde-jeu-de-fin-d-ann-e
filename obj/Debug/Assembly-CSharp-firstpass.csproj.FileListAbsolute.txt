@@ -272,3 +272,7 @@ C:\Users\a.pauwels\Desktop\Projet de fin d'année\obj\Debug\Assembly-CSharp-firs
 C:\Users\a.pauwels\Desktop\Projet de fin d'année\obj\Debug\Assembly-CSharp-firstpass.csproj.CopyComplete
 C:\Users\a.pauwels\Desktop\Projet de fin d'année\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\a.pauwels\Desktop\Projet de fin d'année\obj\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\a.pauwels\Desktop\Projet de fin d'année\Temp\bin\Debug\Cinemachine.dll
+C:\Users\a.pauwels\Desktop\Projet de fin d'année\Temp\bin\Debug\com.unity.cinemachine.editor.dll
+C:\Users\a.pauwels\Desktop\Projet de fin d'année\Temp\bin\Debug\Cinemachine.pdb
+C:\Users\a.pauwels\Desktop\Projet de fin d'année\Temp\bin\Debug\com.unity.cinemachine.editor.pdb

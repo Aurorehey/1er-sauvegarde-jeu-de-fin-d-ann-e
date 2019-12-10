@@ -70,9 +70,10 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
-    <Compile Include="Assets\Script\Dialogue.cs" />
-    <Compile Include="Assets\Script\DialogueManager.cs" />
-    <Compile Include="Assets\Script\DialogueTrigger.cs" />
+    <Compile Include="Assets\Script\controleButton.cs" />
+    <Compile Include="Assets\Script\DialogueScript&amp;erversion\Dialogue.cs" />
+    <Compile Include="Assets\Script\DialogueScript&amp;erversion\DialogueManager.cs" />
+    <Compile Include="Assets\Script\DialogueScript&amp;erversion\DialogueTrigger.cs" />
     <Compile Include="Assets\Script\DoAction.cs" />
     <Compile Include="Assets\Script\FPCSupport.cs" />
     <Compile Include="Assets\Script\ItemSlots.cs" />
