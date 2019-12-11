@@ -1427,7 +1427,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: -5.7436995e+37}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -4525,7 +4525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: cle de Mickey
   itemID: 001
-  itemSprite: {fileID: 21300000, guid: ba5c269605af31c48bd68cfaeee6fc36, type: 3}
+  itemSprite: {fileID: 21300000, guid: 30b0f314cffaa9d488c3de34929742d0, type: 3}
   itemDescription: la cle de Mickey,ouvre sa porte d'entre.
   itemReutilisable: 1
 --- !u!54 &6402875787167352598
