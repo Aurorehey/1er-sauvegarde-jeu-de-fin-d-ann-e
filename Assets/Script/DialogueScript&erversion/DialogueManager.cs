@@ -33,6 +33,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
 
+
         sentences.Clear();
         foreach (string sentence in dialogue.sentences)
         {
@@ -41,9 +42,7 @@ public class DialogueManager : MonoBehaviour
 
         DisplayNextSentence();
     }
-
-
-
+  
     public void DisplayNextSentence()
     {
        
@@ -59,12 +58,9 @@ public class DialogueManager : MonoBehaviour
             string sentence = sentences.Dequeue();
             StopAllCoroutines();
             StartCoroutine(TypeSentence(sentence));
-
-       
-
-
-
+           
     }
+  
 
     IEnumerator TypeSentence(string sentence)//va chercher les bloc de texte dans le script dialogue trigger des personnages
     {
@@ -79,13 +75,13 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+
+
     public void EndDialogue(Dialogue dialogue)
     {
-        animator.SetBool("IsOpen", false);
+        animator.SetBool("IsOpen",false);
     }
-
-    
-
+   
 }
 
 

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -47,7 +48,12 @@ public class FPCSupport : MonoBehaviour
     private string itemIDold;
     private bool itemReutilisableold;
     public GameObject InventoryItemOptions;
+
+    [Header("dialogue")]
     private Dialogue dialogue;
+    public GameObject DialogueBox;
+    
+   
 
     void Start()
     {
@@ -83,6 +89,13 @@ public class FPCSupport : MonoBehaviour
             InventoryItemOptions = GameObject.Find("Inventory_Items_Options");
         }
             InventoryItemOptions.SetActive(false);
+        if(DialogueBox == null)
+        {
+            DialogueBox = GameObject.Find("DialogueBox");
+        }
+        DialogueBox.SetActive(true);
+
+
     }
 
     // Update is called once per frame
@@ -122,6 +135,13 @@ public class FPCSupport : MonoBehaviour
             
 
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            FindObjectOfType<DialogueManager>().DisplayNextSentence();
+            
+        }
+
+   
         if (!useSpecialTexture)
         {
             Ray ray = playerCam.GetComponent<Camera>().ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));//lancer un rayon devant le joueur de la distance pickupRnage si il y a pas un item devant lui.
@@ -144,6 +164,8 @@ public class FPCSupport : MonoBehaviour
             }
         }
     }
+
+  
 
     void TryToInteract()
     {
@@ -268,6 +290,8 @@ public class FPCSupport : MonoBehaviour
     {
         //gere l'inventaire et le joueur.
         inventoryCanvas.SetActive(!inventoryOn);
+        DialogueBox.SetActive(inventoryOn);
+       
         blur.enabled = !inventoryOn;
         fpsComp.enabled = inventoryOn; //fonctionne de façon désinchroniser car il est true au debut et il deveindra false après.
         // gere les options de l'inventaire je veux que quands l'inventaire s'eteind les options de l'inventaire aussi et pas l'inverse.
