@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
+
 
 public class FPCSupport : MonoBehaviour
 {
@@ -52,6 +54,8 @@ public class FPCSupport : MonoBehaviour
     [Header("dialogue")]
     private Dialogue dialogue;
     public GameObject DialogueBox;
+
+ 
     
    
 
@@ -212,6 +216,7 @@ public class FPCSupport : MonoBehaviour
                 if(!objectInteract.GetComponent<DoAction>().needItem)
                 {
                     objectInteract.GetComponent<DoAction>().DoActionNow();
+                    
                 }
                 else
                 {
@@ -219,7 +224,7 @@ public class FPCSupport : MonoBehaviour
                     infoDisplay.text = objectInteract.GetComponent<DoAction>().textwithoutItem;
                     StartCoroutine(WaitAndEraseInfo());
                 }
-            
+               
             }  
         }
     }
