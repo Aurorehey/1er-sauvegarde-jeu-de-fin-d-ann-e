@@ -1,57 +1,57 @@
 ﻿Shader "Unlit/Transparent"
 {
-    Properties
-    {
-        _MainTex ("Texture", 2D) = "white" {}
-    }
+ 
+
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
-        LOD 100
+        Tags { 
+		"Queue"="Transparent"
+		"RenderType"="Opaque" }
+        
 
+		GrabPass
+		{
+			"_GrabTexture"
+		}
         Pass
         {
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            // make fog work
-            #pragma multi_compile_fog
+			#include "UnityCG.cginc"
 
-            #include "UnityCG.cginc"
+			sampler2D _GrabTexture;
+			sampler2D _MainTex;
+          
+		  struct vertInput {   
 
-            struct appdata
-            {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-            };
+				float4 pos : POSITION; 
+				
+				float2 uv :	TEXCOORD0;
+		  };
+		  struct vertOutput {   
 
-            struct v2f
-            {
-                float2 uv : TEXCOORD0;
-                UNITY_FOG_COORDS(1)
-                float4 vertex : SV_POSITION;
-            };
+				float4 pos : SV_POSITION;
+				float2 uv: TEXCOORD0;
+				float4 uvgrab : TEXCOORD1;
+		  };
+		  //Vertex Shader
+		  vertOutput vert(vertInput input){
+		  	  vertOutput o;
+			  o.pos = UnityObjectToClipPos(input.pos); 
+			  o.uvgrab = ComputeGrabScreenPos(o.pos);
+			  o.uv = input.uv;
+			  return o;
+		  }
+		  //Fragment Shader
+		  half4 frag(vertOutput output):COLOR{
+			  half4 background_col = tex2Dproj(_GrabTexture,output.uvgrab);
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
+		  	  half4 texture_col = tex2D(_MainTex,output.uv);
+				return background_col*texture_col;
+			}
 
-            v2f vert (appdata v)
-            {
-                v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                UNITY_TRANSFER_FOG(o,o.vertex);
-                return o;
-            }
-
-            fixed4 frag (v2f i) : SV_Target
-            {
-                // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
-                // apply fog
-                UNITY_APPLY_FOG(i.fogCoord, col);
-                return col;
-            }
+           
             ENDCG
         }
     }
