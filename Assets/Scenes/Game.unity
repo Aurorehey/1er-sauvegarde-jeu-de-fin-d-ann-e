@@ -925,6 +925,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263425453}
   m_CullTransparentMesh: 0
+--- !u!1 &278466016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8365020005622698343, guid: 465c2100eec22db4bad75d370e770e61,
+    type: 3}
+  m_PrefabInstance: {fileID: 8365020006999661906}
+  m_PrefabAsset: {fileID: 0}
+--- !u!131 &278466022
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278466016}
+  m_Enabled: 1
+  m_Texture: {fileID: 0}
+  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!92 &278466023
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278466016}
+  m_Enabled: 1
+--- !u!132 &278466024
+GUIText:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278466016}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!1 &298575131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1759,7 +1817,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 4.4725428e+21, z: 1.9272682e+31, w: 1.370642e+13}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -3459,7 +3517,8 @@ AudioSource:
   m_GameObject: {fileID: 1439787338}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: aa1277b5acdff4546add44eede338e81,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 239c7350c982c6346b923be0e0a3f66a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -4932,12 +4991,12 @@ PrefabInstance:
     - target: {fileID: 1387222913352863599, guid: 868c7120e971a754bad65a8dd636ca35,
         type: 3}
       propertyPath: m_TagString
-      value: Item
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1387222913352863599, guid: 868c7120e971a754bad65a8dd636ca35,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1387222913352863594, guid: 868c7120e971a754bad65a8dd636ca35,
         type: 3}
@@ -5206,7 +5265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 525228179834139554}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: clededingo
   m_TagString: Item
   m_Icon: {fileID: 0}
