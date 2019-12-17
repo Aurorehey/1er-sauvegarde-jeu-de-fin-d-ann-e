@@ -78,6 +78,7 @@
     <Compile Include="Assets\Script\FPCSupport.cs" />
     <Compile Include="Assets\Script\ItemSlots.cs" />
     <Compile Include="Assets\Script\ItemVariables.cs" />
+    <Compile Include="Assets\Script\QuetesManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
