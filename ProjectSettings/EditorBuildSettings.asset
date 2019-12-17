@@ -5,8 +5,8 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/EcranAcceuil.unity
+  - enabled: 1
+    path: Assets/_MenuPrincipal/EcranAcceuil.unity
     guid: 4bac287a8ef05e94098b45af1af1d455
   - enabled: 0
     path: Assets/Scenes/EcranDeCinematique.unity

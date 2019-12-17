@@ -12,14 +12,28 @@ ScriptsOnlyBuild:
     - FPCSupport
     - ItemSlots
     - ItemVariables
+    - Jouer
+    - Quitter
+    Unity.Rider.Editor.dll:
+    - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_ColorGradient
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
+    - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.EventTrigger
@@ -51,8 +65,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
     - Class: 64
@@ -81,58 +93,46 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
-    - Class: 109
-      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9928}
+      Script: {instanceID: 9876}
     - Class: 114
-      Script: {instanceID: 10042}
+      Script: {instanceID: 9998}
     - Class: 114
-      Script: {instanceID: 10134}
+      Script: {instanceID: 10090}
     - Class: 114
-      Script: {instanceID: 10192}
+      Script: {instanceID: 10152}
     - Class: 114
-      Script: {instanceID: 10256}
+      Script: {instanceID: 10216}
     - Class: 114
-      Script: {instanceID: 10354}
+      Script: {instanceID: 10316}
     - Class: 114
-      Script: {instanceID: 10440}
+      Script: {instanceID: 10410}
     - Class: 114
-      Script: {instanceID: 10580}
+      Script: {instanceID: 10556}
     - Class: 114
-      Script: {instanceID: 10660}
+      Script: {instanceID: 10640}
     - Class: 114
-      Script: {instanceID: 10700}
-    - Class: 114
-      Script: {instanceID: 10802}
+      Script: {instanceID: 10800}
     - Class: 114
       Script: {instanceID: 10818}
     - Class: 114
-      Script: {instanceID: 10848}
+      Script: {instanceID: 10854}
     - Class: 114
-      Script: {instanceID: 10936}
+      Script: {instanceID: 10946}
     - Class: 114
-      Script: {instanceID: 11174}
+      Script: {instanceID: 11196}
     - Class: 114
-      Script: {instanceID: 11302}
+      Script: {instanceID: 11330}
     - Class: 114
-      Script: {instanceID: 11374}
+      Script: {instanceID: 11408}
     - Class: 114
-      Script: {instanceID: 11472}
+      Script: {instanceID: 11892}
     - Class: 114
-      Script: {instanceID: 11490}
+      Script: {instanceID: 12122}
     - Class: 114
-      Script: {instanceID: 11832}
+      Script: {instanceID: 12316}
     - Class: 114
-      Script: {instanceID: 12042}
-    - Class: 114
-      Script: {instanceID: 12062}
-    - Class: 114
-      Script: {instanceID: 12172}
-    - Class: 114
-      Script: {instanceID: 12242}
-    - Class: 114
-      Script: {instanceID: 12286}
+      Script: {instanceID: 12366}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -185,9 +185,78 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 238
       Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
     - Class: 1953259897
+      Script: {instanceID: 0}
+    Assets/_MenuPrincipal/EcranAcceuil.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 109
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9876}
+    - Class: 114
+      Script: {instanceID: 10090}
+    - Class: 114
+      Script: {instanceID: 10152}
+    - Class: 114
+      Script: {instanceID: 10640}
+    - Class: 114
+      Script: {instanceID: 10686}
+    - Class: 114
+      Script: {instanceID: 11196}
+    - Class: 114
+      Script: {instanceID: 11508}
+    - Class: 114
+      Script: {instanceID: 11528}
+    - Class: 114
+      Script: {instanceID: 11892}
+    - Class: 114
+      Script: {instanceID: 12104}
+    - Class: 114
+      Script: {instanceID: 12240}
+    - Class: 114
+      Script: {instanceID: 12366}
+    - Class: 114
+      Script: {instanceID: 52244}
+    - Class: 114
+      Script: {instanceID: 52252}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -1548,12 +1617,6 @@ ScriptsOnlyBuild:
     className: VertexShakeB
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: controleButton
-  - hash:
-      serializedVersion: 2
       Hash: 219ec6059796d8951d2adcd8505d0dc2
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.CrossPlatformInput
@@ -1652,6 +1715,12 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: QuetesManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TeleType
   - hash:
@@ -1740,13 +1809,19 @@ ScriptsOnlyBuild:
     className: ColorCorrectionLookup
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestRunner.Utils
+    className: TestRunCallbackListener
+  - hash:
+      serializedVersion: 2
       Hash: ffdbd5802c2482a072a88f428ad3ca9d
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineBrain
   - hash:
       serializedVersion: 2
-      Hash: 20eeaeae829475b5e354d1f626c51a2b
+      Hash: 4ef0f7d42cdb13479386e1f049c315aa
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner
     className: PlaymodeTestsController
@@ -1828,8 +1903,27 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
     className: AutoMobileShaderSwitch
+  - hash:
+      serializedVersion: 2
+      Hash: 946ba6d4a5bcec9d6a0f4f14b020563d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IconPreview
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Quitter
+  - hash:
+      serializedVersion: 2
+      Hash: 0340ac688eebfc7e246e48abcbd40f06
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Jouer
   platform: 19
   scenePathNames:
+  - Assets/_MenuPrincipal/EcranAcceuil.unity
   - Assets/Scenes/Game.unity
   playerPath: "C:/Users/a.pauwels/Desktop/Projet de fin d'ann\xE9e/build/Projet de
     fin d'ann\xE9e.exe"
