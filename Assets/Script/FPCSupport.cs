@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Audio;
+
 
 
 public class FPCSupport : MonoBehaviour
@@ -55,6 +55,8 @@ public class FPCSupport : MonoBehaviour
     private Dialogue dialogue;
     public GameObject DialogueBox;
 
+   
+
  
     
    
@@ -99,6 +101,7 @@ public class FPCSupport : MonoBehaviour
         }
         DialogueBox.SetActive(true);
 
+       
 
     }
 
@@ -182,6 +185,7 @@ public class FPCSupport : MonoBehaviour
             objectInteract = hit.collider.gameObject;
             if (objectInteract.tag == ItemTag)
             {
+              
                 //pick up 
                 //verifier si l'inventaire est complet
                 if (inventorySlots.childCount == slotCount)
@@ -189,6 +193,7 @@ public class FPCSupport : MonoBehaviour
                     //Debug.Log("L'inventaire est complet!");
                     infoDisplay.text = "Inventaire est complet!";
                     StartCoroutine(WaitAndEraseInfo());
+                    
                 }
 
                 //hoever
@@ -196,6 +201,7 @@ public class FPCSupport : MonoBehaviour
                 {
                     //faire disparaitre  l'objet 
                     objectInteract.SetActive(false);
+                    
                     //integrer notre nouvelle item dans l'inventaire.
                     Transform newItem;
                     newItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity) as Transform;//si on laisse comme ça le new item va apparaitre à une possition aléatoire.
