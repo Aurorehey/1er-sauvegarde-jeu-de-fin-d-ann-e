@@ -17,7 +17,6 @@ public class FPCSupport : MonoBehaviour
 
     public float pickupRange = 3.0f;
     private GameObject objectInteract;
-    
 
 
     [Header("Button List")] //titre pour les boutons.
@@ -55,14 +54,9 @@ public class FPCSupport : MonoBehaviour
     private Dialogue dialogue;
     public GameObject DialogueBox;
 
-   
-
- 
-    
-   
-
     void Start()
     {
+       
         
         if (playerCam == null)
         {
@@ -95,15 +89,19 @@ public class FPCSupport : MonoBehaviour
             InventoryItemOptions = GameObject.Find("Inventory_Items_Options");
         }
             InventoryItemOptions.SetActive(false);
+
+
         if(DialogueBox == null)
         {
             DialogueBox = GameObject.Find("DialogueBox");
         }
-        DialogueBox.SetActive(true);
-
-       
+            DialogueBox.SetActive(true);
+        
+        
 
     }
+
+  
 
     // Update is called once per frame
     void Update()
@@ -147,6 +145,7 @@ public class FPCSupport : MonoBehaviour
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
             
         }
+        
 
 
    
@@ -303,7 +302,7 @@ public class FPCSupport : MonoBehaviour
         //gere l'inventaire et le joueur.
         inventoryCanvas.SetActive(!inventoryOn);
         DialogueBox.SetActive(inventoryOn);
-       
+        
         blur.enabled = !inventoryOn;
         fpsComp.enabled = inventoryOn; //fonctionne de façon désinchroniser car il est true au debut et il deveindra false après.
         // gere les options de l'inventaire je veux que quands l'inventaire s'eteind les options de l'inventaire aussi et pas l'inverse.
@@ -361,5 +360,6 @@ public class FPCSupport : MonoBehaviour
         }
         
     }
-   
+    
+
 }

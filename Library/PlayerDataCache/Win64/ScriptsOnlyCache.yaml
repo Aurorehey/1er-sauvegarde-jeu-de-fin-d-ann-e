@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl
     - UnityStandardAssets.ImageEffects.Blur
     Assembly-CSharp.dll:
+    - Credits
     - DialogueManager
     - DialogueTrigger
     - DoAction
@@ -85,8 +86,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
-    - Class: 92
-      Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
     - Class: 104
@@ -96,52 +95,48 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9876}
     - Class: 114
-      Script: {instanceID: 9998}
+      Script: {instanceID: 9992}
     - Class: 114
-      Script: {instanceID: 10090}
+      Script: {instanceID: 10086}
     - Class: 114
-      Script: {instanceID: 10152}
+      Script: {instanceID: 10148}
     - Class: 114
-      Script: {instanceID: 10216}
+      Script: {instanceID: 10212}
     - Class: 114
-      Script: {instanceID: 10316}
+      Script: {instanceID: 10314}
     - Class: 114
       Script: {instanceID: 10410}
     - Class: 114
       Script: {instanceID: 10556}
     - Class: 114
-      Script: {instanceID: 10640}
+      Script: {instanceID: 10638}
     - Class: 114
-      Script: {instanceID: 10800}
+      Script: {instanceID: 10796}
     - Class: 114
-      Script: {instanceID: 10818}
+      Script: {instanceID: 10814}
     - Class: 114
-      Script: {instanceID: 10854}
+      Script: {instanceID: 10850}
     - Class: 114
-      Script: {instanceID: 10946}
+      Script: {instanceID: 10942}
     - Class: 114
-      Script: {instanceID: 11196}
+      Script: {instanceID: 11192}
     - Class: 114
-      Script: {instanceID: 11330}
+      Script: {instanceID: 11326}
     - Class: 114
-      Script: {instanceID: 11408}
+      Script: {instanceID: 11404}
     - Class: 114
-      Script: {instanceID: 11892}
+      Script: {instanceID: 11884}
     - Class: 114
-      Script: {instanceID: 12122}
+      Script: {instanceID: 12116}
     - Class: 114
-      Script: {instanceID: 12316}
+      Script: {instanceID: 12308}
     - Class: 114
-      Script: {instanceID: 12366}
+      Script: {instanceID: 12356}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
       Script: {instanceID: 0}
     - Class: 128
-      Script: {instanceID: 0}
-    - Class: 131
-      Script: {instanceID: 0}
-    - Class: 132
       Script: {instanceID: 0}
     - Class: 134
       Script: {instanceID: 0}
@@ -164,6 +159,10 @@ ScriptsOnlyBuild:
     - Class: 193
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 205
       Script: {instanceID: 0}
@@ -195,6 +194,49 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 1953259897
       Script: {instanceID: 0}
+    Assets/_Credits/Credits.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9876}
+    - Class: 114
+      Script: {instanceID: 10086}
+    - Class: 114
+      Script: {instanceID: 10148}
+    - Class: 114
+      Script: {instanceID: 10638}
+    - Class: 114
+      Script: {instanceID: 11884}
+    - Class: 114
+      Script: {instanceID: 12356}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/_MenuPrincipal/EcranAcceuil.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -219,31 +261,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9876}
     - Class: 114
-      Script: {instanceID: 10090}
+      Script: {instanceID: 10086}
     - Class: 114
-      Script: {instanceID: 10152}
+      Script: {instanceID: 10148}
     - Class: 114
-      Script: {instanceID: 10640}
+      Script: {instanceID: 10320}
     - Class: 114
-      Script: {instanceID: 10686}
+      Script: {instanceID: 10638}
     - Class: 114
-      Script: {instanceID: 11196}
+      Script: {instanceID: 10684}
     - Class: 114
-      Script: {instanceID: 11508}
+      Script: {instanceID: 11192}
     - Class: 114
-      Script: {instanceID: 11528}
+      Script: {instanceID: 11506}
     - Class: 114
-      Script: {instanceID: 11892}
+      Script: {instanceID: 11526}
     - Class: 114
-      Script: {instanceID: 12104}
+      Script: {instanceID: 11626}
     - Class: 114
-      Script: {instanceID: 12240}
+      Script: {instanceID: 11884}
     - Class: 114
-      Script: {instanceID: 12366}
+      Script: {instanceID: 12096}
     - Class: 114
-      Script: {instanceID: 52244}
+      Script: {instanceID: 12232}
     - Class: 114
-      Script: {instanceID: 52252}
+      Script: {instanceID: 12356}
+    - Class: 114
+      Script: {instanceID: 145762}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -409,6 +453,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.ImageEffects
     className: VignetteAndChromaticAberration
+  - hash:
+      serializedVersion: 2
+      Hash: 946ba6d4a5bcec9d6a0f4f14b020563d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IconPreview
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -583,6 +633,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DoAction
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Quitter
   - hash:
       serializedVersion: 2
       Hash: e540a01426f9ad59088593bf72bcd255
@@ -1389,6 +1445,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 0340ac688eebfc7e246e48abcbd40f06
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Jouer
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1715,12 +1777,6 @@ ScriptsOnlyBuild:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: QuetesManager
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TeleType
   - hash:
@@ -1905,25 +1961,20 @@ ScriptsOnlyBuild:
     className: AutoMobileShaderSwitch
   - hash:
       serializedVersion: 2
-      Hash: 946ba6d4a5bcec9d6a0f4f14b020563d
+      Hash: 48aa7e3a10ad49e34c99883f1c252b8d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: IconPreview
+    className: CameraLogicFree
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 0e9e8035e6ad290fa66a0ff147f564a8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Quitter
-  - hash:
-      serializedVersion: 2
-      Hash: 0340ac688eebfc7e246e48abcbd40f06
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Jouer
+    className: Credits
   platform: 19
   scenePathNames:
   - Assets/_MenuPrincipal/EcranAcceuil.unity
+  - Assets/_Credits/Credits.unity
   - Assets/Scenes/Game.unity
   playerPath: "C:/Users/a.pauwels/Desktop/Projet de fin d'ann\xE9e/build/Projet de
     fin d'ann\xE9e.exe"

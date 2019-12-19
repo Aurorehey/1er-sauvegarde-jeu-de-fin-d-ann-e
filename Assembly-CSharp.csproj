@@ -62,6 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Credits\Credits.cs" />
+    <Compile Include="Assets\_Credits\Retour.cs" />
     <Compile Include="Assets\_MenuPrincipal\ScriptMenuD'acceuil\Jouer.cs" />
     <Compile Include="Assets\_MenuPrincipal\ScriptMenuD'acceuil\Quitter.cs" />
     <Compile Include="Assets\PSD Logo Templates\Sample\IconPreview.cs" />
@@ -80,6 +82,9 @@
     <Compile Include="Assets\Script\FPCSupport.cs" />
     <Compile Include="Assets\Script\ItemSlots.cs" />
     <Compile Include="Assets\Script\ItemVariables.cs" />
+    <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\CameraLogicFree.cs" />
+    <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\DemoFree.cs" />
+    <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\SimpleCharacterControlFree.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -133,6 +138,7 @@
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Supercyan Character Pack Free Sample\Shaders\FreeCelShader.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
