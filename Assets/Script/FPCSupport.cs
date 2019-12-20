@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 
@@ -33,7 +34,7 @@ public class FPCSupport : MonoBehaviour
     public int specialSize = 50;
     public Sprite defaulTexture;//texture par defaut.
     public Sprite interactTexture;// texture d'interaction.
-    private bool useSpecialTexture = false ;
+    private bool useSpecialTexture = false;
 
 
     [Header("inventory's Data")]
@@ -54,10 +55,14 @@ public class FPCSupport : MonoBehaviour
     private Dialogue dialogue;
     public GameObject DialogueBox;
 
+    public string Fin;
+    public bool finito=false;
+    
+
     void Start()
     {
-       
-        
+
+
         if (playerCam == null)
         {
             playerCam = GameObject.FindWithTag("MainCamera");
@@ -65,7 +70,7 @@ public class FPCSupport : MonoBehaviour
 
         blur = playerCam.GetComponent<UnityStandardAssets.ImageEffects.Blur>();//acceder au script blur
         blur.enabled = false;//blur bien désactivé au démarage.Juste un composant on utilise enabled.
-        if (infoDisplay== null)
+        if (infoDisplay == null)
         {
             infoDisplay = GameObject.Find("infoDisplay").GetComponent<Text>();//crosshairdisplay pas renseigner.
 
@@ -84,25 +89,38 @@ public class FPCSupport : MonoBehaviour
             inventoryCanvas = GameObject.Find("Inventory Panel");
         }//inventory canvas bien renseigné.
         inventoryCanvas.SetActive(false);//quand c'est un game object on utilise setActive.
-        if(InventoryItemOptions == null)
+        if (InventoryItemOptions == null)
         {
             InventoryItemOptions = GameObject.Find("Inventory_Items_Options");
         }
-            InventoryItemOptions.SetActive(false);
+        InventoryItemOptions.SetActive(false);
 
 
-        if(DialogueBox == null)
+        if (DialogueBox == null)
         {
             DialogueBox = GameObject.Find("DialogueBox");
         }
-            DialogueBox.SetActive(true);
-        
+        DialogueBox.SetActive(true);
+
         
 
+        
+    }
+   
+
+//public void OnTriggerEnter(Collider other)
+//{
+
+//   JeQuitteLeJeu();
+//}
+
+public void JeQuitteLeJeu()
+    {
+
+        SceneManager.LoadScene(Fin);
     }
 
-  
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -145,7 +163,9 @@ public class FPCSupport : MonoBehaviour
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
             
         }
-        
+
+       
+
 
 
    
@@ -172,7 +192,7 @@ public class FPCSupport : MonoBehaviour
         }
     }
 
-  
+    
 
     void TryToInteract()
     {
@@ -360,6 +380,17 @@ public class FPCSupport : MonoBehaviour
         }
         
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "fin")
+        {
+            Debug.Log("Fin");
+            JeQuitteLeJeu();
+
+        }
+        
+    }
+
 
 }

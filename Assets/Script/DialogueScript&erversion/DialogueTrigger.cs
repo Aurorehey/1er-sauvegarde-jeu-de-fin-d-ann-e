@@ -16,20 +16,20 @@ public class DialogueTrigger : MonoBehaviour
     
 
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 
 
-    private void OnTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other)
     {
         FindObjectOfType<DialogueManager>().EndDialogue(dialogue);
         
     }
-        
-    
+
+   
 }
 
    

@@ -15,6 +15,8 @@ ScriptsOnlyBuild:
     - ItemVariables
     - Jouer
     - Quitter
+    - Retour
+    - jfjfjf
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -26,10 +28,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -93,45 +93,45 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9876}
+      Script: {instanceID: 9878}
     - Class: 114
-      Script: {instanceID: 9992}
+      Script: {instanceID: 9996}
     - Class: 114
-      Script: {instanceID: 10086}
+      Script: {instanceID: 10094}
     - Class: 114
-      Script: {instanceID: 10148}
+      Script: {instanceID: 10156}
     - Class: 114
-      Script: {instanceID: 10212}
+      Script: {instanceID: 10222}
     - Class: 114
-      Script: {instanceID: 10314}
+      Script: {instanceID: 10324}
     - Class: 114
-      Script: {instanceID: 10410}
+      Script: {instanceID: 10420}
     - Class: 114
-      Script: {instanceID: 10556}
+      Script: {instanceID: 10566}
     - Class: 114
-      Script: {instanceID: 10638}
+      Script: {instanceID: 10648}
     - Class: 114
-      Script: {instanceID: 10796}
+      Script: {instanceID: 10806}
     - Class: 114
-      Script: {instanceID: 10814}
+      Script: {instanceID: 10824}
     - Class: 114
-      Script: {instanceID: 10850}
+      Script: {instanceID: 10860}
     - Class: 114
-      Script: {instanceID: 10942}
+      Script: {instanceID: 10952}
     - Class: 114
-      Script: {instanceID: 11192}
+      Script: {instanceID: 11202}
     - Class: 114
-      Script: {instanceID: 11326}
+      Script: {instanceID: 11336}
     - Class: 114
-      Script: {instanceID: 11404}
+      Script: {instanceID: 11414}
     - Class: 114
-      Script: {instanceID: 11884}
+      Script: {instanceID: 11896}
     - Class: 114
-      Script: {instanceID: 12116}
+      Script: {instanceID: 12128}
     - Class: 114
-      Script: {instanceID: 12308}
+      Script: {instanceID: 12322}
     - Class: 114
-      Script: {instanceID: 12356}
+      Script: {instanceID: 12370}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -214,22 +214,28 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9876}
+      Script: {instanceID: 9878}
     - Class: 114
-      Script: {instanceID: 10086}
+      Script: {instanceID: 10094}
     - Class: 114
-      Script: {instanceID: 10148}
+      Script: {instanceID: 10156}
     - Class: 114
-      Script: {instanceID: 10638}
+      Script: {instanceID: 10198}
     - Class: 114
-      Script: {instanceID: 11884}
+      Script: {instanceID: 10648}
     - Class: 114
-      Script: {instanceID: 12356}
+      Script: {instanceID: 11202}
+    - Class: 114
+      Script: {instanceID: 11896}
+    - Class: 114
+      Script: {instanceID: 12370}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -259,35 +265,37 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9876}
+      Script: {instanceID: 9878}
     - Class: 114
-      Script: {instanceID: 10086}
+      Script: {instanceID: 10094}
     - Class: 114
-      Script: {instanceID: 10148}
+      Script: {instanceID: 10156}
     - Class: 114
-      Script: {instanceID: 10320}
+      Script: {instanceID: 10330}
     - Class: 114
-      Script: {instanceID: 10638}
+      Script: {instanceID: 10648}
     - Class: 114
-      Script: {instanceID: 10684}
+      Script: {instanceID: 10694}
     - Class: 114
-      Script: {instanceID: 11192}
+      Script: {instanceID: 11202}
     - Class: 114
-      Script: {instanceID: 11506}
+      Script: {instanceID: 11516}
     - Class: 114
-      Script: {instanceID: 11526}
+      Script: {instanceID: 11536}
     - Class: 114
-      Script: {instanceID: 11626}
+      Script: {instanceID: 11622}
     - Class: 114
-      Script: {instanceID: 11884}
+      Script: {instanceID: 11638}
     - Class: 114
-      Script: {instanceID: 12096}
+      Script: {instanceID: 11896}
     - Class: 114
-      Script: {instanceID: 12232}
+      Script: {instanceID: 12108}
     - Class: 114
-      Script: {instanceID: 12356}
+      Script: {instanceID: 12244}
     - Class: 114
-      Script: {instanceID: 145762}
+      Script: {instanceID: 12276}
+    - Class: 114
+      Script: {instanceID: 12370}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -333,6 +341,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SceneAndURLLoader
+  - hash:
+      serializedVersion: 2
+      Hash: 48aa7e3a10ad49e34c99883f1c252b8d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraLogicFree
   - hash:
       serializedVersion: 2
       Hash: 3748fbad2d474a315bda516b8363a0c5
@@ -549,6 +563,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: a260b1b5c5e8f7b28b2d8be780e96884
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Retour
   - hash:
       serializedVersion: 2
       Hash: 352455aaadb8c98ff36ead557753abfa
@@ -1205,7 +1225,7 @@ ScriptsOnlyBuild:
     className: ScreenSpaceAmbientOcclusion
   - hash:
       serializedVersion: 2
-      Hash: c9f048521af05a95af7ac82a8231d9d5
+      Hash: 10ece3905e50f304494f566c84937274
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FPCSupport
@@ -1437,6 +1457,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: 
     className: AlphaButtonClickMask
+  - hash:
+      serializedVersion: 2
+      Hash: 0e9e8035e6ad290fa66a0ff147f564a8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Credits
   - hash:
       serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
@@ -1830,6 +1856,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: jfjfjf
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: BaseInput
@@ -1959,18 +1991,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
     className: AutoMobileShaderSwitch
-  - hash:
-      serializedVersion: 2
-      Hash: 48aa7e3a10ad49e34c99883f1c252b8d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CameraLogicFree
-  - hash:
-      serializedVersion: 2
-      Hash: 0e9e8035e6ad290fa66a0ff147f564a8
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Credits
   platform: 19
   scenePathNames:
   - Assets/_MenuPrincipal/EcranAcceuil.unity
